@@ -5,7 +5,7 @@ import type { IssueItem } from "../models/issue_item";
 import { IssueStatuses } from "../enums/issue_statuses";
 import { IssuePriorities } from "../enums/issue_priorities";
 
-import './styles/ElementsList.css'
+import './styles/IssuesList.css'
 
 const issuesList : IssueItem[] = [
     {id : 0, title : "Task1", description : "This is task 1", status : IssueStatuses.Planning, priority : IssuePriorities.Low, assignee : "User1"},
