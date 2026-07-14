@@ -1,0 +1,75 @@
+.information-block > div {
+  position: relative;
+  min-height: 122px;
+  overflow: hidden;
+  padding: 56px 20px 18px;
+  border: 1px solid rgba(222, 228, 239, 0.9);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: 0 10px 30px rgba(44, 55, 91, 0.055);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.information-block > div::before {
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 9px;
+  color: #fff;
+  background: var(--primary);
+  box-shadow: 0 7px 16px rgba(98, 91, 246, 0.25);
+  content: '•';
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.information-block > div:nth-child(1)::before {
+  content: '◷';
+}
+
+.information-block > div:nth-child(2)::before {
+  content: '♟';
+  background: #14a987;
+  box-shadow: 0 7px 16px rgba(20, 169, 135, 0.23);
+}
+
+.information-block > div:nth-child(3)::before {
+  content: '@';
+  background: #f18a48;
+  box-shadow: 0 7px 16px rgba(241, 138, 72, 0.23);
+}
+
+.information-block > div:nth-child(4)::before {
+  content: '✓';
+  background: #e95875;
+  box-shadow: 0 7px 16px rgba(233, 88, 117, 0.23);
+}
+
+.information-block > div::after {
+  position: absolute;
+  top: -34px;
+  right: -36px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(98, 91, 246, 0.055);
+  content: '';
+}
+
+.information-block > div:hover {
+  border-color: rgba(98, 91, 246, 0.2);
+  box-shadow: 0 16px 36px rgba(44, 55, 91, 0.1);
+  transform: translateY(-3px);
+}
+
+.information-block p {
+  margin: 0;
+  color: #465166;
+  font-size: 0.93rem;
+  font-weight: 600;
+  line-height: 1.45;
+}

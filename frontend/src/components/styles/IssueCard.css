@@ -1,0 +1,103 @@
+.issue-card {
+  position: relative;
+  min-height: 230px;
+  overflow: hidden;
+  padding: 26px 24px 22px;
+  border: 1px solid rgba(222, 228, 239, 0.95);
+  border-radius: 22px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  isolation: isolate;
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.issue-card::before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--card-accent, #625bf6), var(--card-accent-soft, #9e99ff));
+  content: '';
+}
+
+.issue-card::after {
+  position: absolute;
+  z-index: -1;
+  right: -52px;
+  bottom: -58px;
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--card-accent, #625bf6) 7%, transparent);
+  content: '';
+}
+
+.issue-card:nth-child(3n + 2) {
+  --card-accent: #14a987;
+  --card-accent-soft: #66d1bb;
+}
+
+.issue-card:nth-child(3n) {
+  --card-accent: #f18a48;
+  --card-accent-soft: #f7b27f;
+}
+
+.issue-card:hover {
+  border-color: color-mix(in srgb, var(--card-accent, #625bf6) 24%, #e3e9f2);
+  box-shadow: 0 24px 55px rgba(44, 55, 91, 0.14);
+  transform: translateY(-5px);
+}
+
+.issue-card h3 {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-family: 'Manrope', 'DM Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.issue-card p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.89rem;
+  line-height: 1.5;
+}
+
+.issue-card h3 + p {
+  min-height: 44px;
+  margin: 0 0 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  color: #465166;
+  font-size: 0.96rem;
+}
+
+.issue-card p:nth-of-type(n + 2) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.issue-card p:nth-of-type(n + 2)::before {
+  flex: 0 0 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--card-accent, #625bf6);
+  content: '';
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--card-accent, #625bf6) 10%, transparent);
+}
+
+@supports not (background: color-mix(in srgb, red, blue)) {
+  .issue-card::after {
+    background: rgba(98, 91, 246, 0.06);
+  }
+
+  .issue-card:hover {
+    border-color: rgba(98, 91, 246, 0.25);
+  }
+}
