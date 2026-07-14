@@ -11,16 +11,16 @@ function InfoBlock ( { currentDate, usersCount, userName, issuesForUser } : Info
     return (
         <>
             <div>
-                <text>Current Date is: {currentDate}</text>
+                <p>Current Date is: {currentDate}</p>
             </div>
             <div>
-                <text>Total users: {usersCount}</text>
+                <p>Total users: {usersCount}</p>
             </div>
             <div>
-                <text>Your name: {userName}</text>
+                <p>Your name: {userName}</p>
             </div>
             <div>
-                <text>Your total tasks: {issuesForUser}</text>
+                <p>Your total tasks: {issuesForUser}</p>
             </div>
         </>
     )

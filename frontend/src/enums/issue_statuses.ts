@@ -1,4 +1,4 @@
-export const TaskStatuses = {
+export const IssueStatuses = {
   Planning: "planning",
   ReadyToDo: "readyToDo",
   InProgress: "inProgress",
@@ -6,5 +6,5 @@ export const TaskStatuses = {
   Closed: "closed",
 } as const;
 
-export type TaskStatus =
-  (typeof TaskStatuses)[keyof typeof TaskStatuses];
+export type IssueStatus =
+  (typeof IssueStatuses)[keyof typeof IssueStatuses];

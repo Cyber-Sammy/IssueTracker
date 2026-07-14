@@ -6,7 +6,7 @@ interface HeaderProps {
 
 function Header({totalIssues} : HeaderProps) {
     return (
-        <>Issue Tracker V0.1. Total issues: {totalIssues}</>
+        <p>Issue Tracker V0.1. Total issues: {totalIssues}</p>
     );
 }
 
