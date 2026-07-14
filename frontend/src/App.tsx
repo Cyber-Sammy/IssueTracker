@@ -20,7 +20,7 @@ const issuesList : IssueItem[] = [
 function App() {
   return (
     <div className='app-container'>
-      <Header totalIssues={50}></Header>
+      <Header totalIssues={issuesList.length}></Header>
       <p>This is a simple issue tracker app built with .NET and React</p>
       <div className='information-block'>
         <InfoBlock userName='CyberSammy' currentDate='6-7-6767' usersCount={123} issuesForUser={10}></InfoBlock>
