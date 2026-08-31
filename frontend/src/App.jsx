@@ -28,7 +28,16 @@ function App() {
   }
 
   function handleIssueSelection(selectedIssueId) {
-    currentSelectedIssueId === selectedIssueId ? selectIssue(null) : selectIssue(selectedIssueId);
+    if (currentSelectedIssueId === selectedIssueId) {
+      selectIssue(null);
+    } else {
+      selectIssue(selectedIssueId);
+    }
+  }
+
+  function handleIssueDeletion(currentSelectedIssueId) {
+    deleteIssue(currentSelectedIssueId);
+    selectIssue(null);
   }
 
   return (
@@ -44,11 +53,13 @@ function App() {
           selectedIssueId={currentSelectedIssueId} 
           selectIssueCallback={handleIssueSelection} />
       </div>
-      <div>
-        <Button text="Delete issue" callback={() => {
-          deleteIssue(currentSelectedIssueId);
-          selectIssue(null);
+      <div style={{ display: "flex", gap: "12px" }}>
+        <Button text="Delete issue" isEnabled={currentSelectedIssueId !== null} callback={() => {
+            handleIssueDeletion(currentSelectedIssueId)
           }}/>
+        <Button text="Restore issues" callback={() => {
+          changeIssues(issues => defaultIssues);
+        }}/>
       </div>
     </div>
   )

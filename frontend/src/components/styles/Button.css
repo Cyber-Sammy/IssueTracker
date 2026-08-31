@@ -61,6 +61,37 @@
   outline-offset: 3px;
 }
 
+.delete-button--disabled,
+.delete-button:disabled {
+  border-color: #d7dce6;
+  color: #949dac;
+  background: linear-gradient(135deg, #f1f3f7, #e7eaf0);
+  box-shadow: none;
+  cursor: not-allowed;
+  filter: none;
+  transform: none;
+}
+
+.delete-button--disabled::before,
+.delete-button:disabled::before {
+  color: #aeb5c1;
+}
+
+.delete-button--disabled::after,
+.delete-button:disabled::after {
+  display: none;
+}
+
+.delete-button--disabled:hover,
+.delete-button:disabled:hover,
+.delete-button--disabled:active,
+.delete-button:disabled:active {
+  border-color: #d7dce6;
+  box-shadow: none;
+  filter: none;
+  transform: none;
+}
+
 @media (max-width: 600px) {
   .delete-button {
     width: 100%;
