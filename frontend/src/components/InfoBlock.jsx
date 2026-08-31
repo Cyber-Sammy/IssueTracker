@@ -1,13 +1,6 @@
 import './styles/InfoBlock.css'
 
-interface InfoBlockProps {
-    currentDate : string;
-    usersCount : number;
-    userName : string;
-    issuesForUser : number;
-}
-
-function InfoBlock ( { currentDate, usersCount, userName, issuesForUser } : InfoBlockProps ) {
+function InfoBlock ( { currentDate, usersCount, userName, issuesForUser } ) {
     return (
         <>
             <div>

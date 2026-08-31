@@ -1,0 +1,68 @@
+.delete-button {
+  position: relative;
+  display: inline-flex;
+  min-width: 170px;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+  padding: 0 24px;
+  overflow: hidden;
+  border: 1px solid #dc4967;
+  border-radius: 14px;
+  color: #fff;
+  background: linear-gradient(135deg, #eb5c78, #d83d5d);
+  box-shadow: 0 12px 25px rgba(216, 61, 93, 0.22);
+  cursor: pointer;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, filter 180ms ease;
+}
+
+.delete-button::before {
+  content: '×';
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.delete-button::after {
+  position: absolute;
+  top: -40%;
+  left: -35%;
+  width: 28%;
+  height: 180%;
+  background: rgba(255, 255, 255, 0.2);
+  content: '';
+  transform: rotate(18deg);
+  transition: left 350ms ease;
+}
+
+.delete-button:hover {
+  border-color: #c93252;
+  box-shadow: 0 16px 32px rgba(216, 61, 93, 0.3);
+  filter: saturate(1.08);
+  transform: translateY(-2px);
+}
+
+.delete-button:hover::after {
+  left: 115%;
+}
+
+.delete-button:active {
+  box-shadow: 0 7px 16px rgba(216, 61, 93, 0.24);
+  transform: translateY(1px);
+}
+
+.delete-button:focus-visible {
+  outline: 4px solid rgba(235, 92, 120, 0.2);
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .delete-button {
+    width: 100%;
+  }
+}

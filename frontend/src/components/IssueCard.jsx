@@ -1,14 +1,9 @@
 import './styles/IssueCard.css'
 
-import type { IssueItem } from "../models/issue_item";
-
-interface IssueCardProps {
-    issue: IssueItem;
-}
-
-function IssueCard({ issue }: IssueCardProps) {
+function IssueCard({ issue, isSelected, selectIssueCallback }) {
     return (
-        <div className="issue-card">
+        <div onClick={() => selectIssueCallback?.(issue.id)} 
+             className={`issue-card ${isSelected ? 'selected' : ''}`}>
             <h3>{issue.title}</h3>
             <p>{issue.description}</p>
             <p>Status: {issue.status}</p>

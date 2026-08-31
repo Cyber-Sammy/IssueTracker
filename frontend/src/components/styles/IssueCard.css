@@ -7,8 +7,11 @@
   border-radius: 22px;
   background: var(--surface);
   box-shadow: var(--shadow);
+  cursor: pointer;
   isolation: isolate;
-  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  outline: 4px solid transparent;
+  outline-offset: 0;
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease, background 200ms ease, outline-color 200ms ease;
 }
 
 .issue-card::before {
@@ -48,6 +51,56 @@
   border-color: color-mix(in srgb, var(--card-accent, #625bf6) 24%, #e3e9f2);
   box-shadow: 0 24px 55px rgba(44, 55, 91, 0.14);
   transform: translateY(-5px);
+}
+
+.issue-card.selected {
+  border-color: var(--primary);
+  outline-color: rgba(98, 91, 246, 0.16);
+  background:
+    linear-gradient(145deg, rgba(98, 91, 246, 0.075), transparent 48%),
+    #fff;
+  box-shadow:
+    0 0 0 1px rgba(98, 91, 246, 0.14),
+    0 24px 55px rgba(71, 63, 197, 0.18);
+  transform: translateY(-4px);
+}
+
+.issue-card.selected:hover {
+  border-color: var(--primary-dark);
+  outline-color: rgba(98, 91, 246, 0.22);
+  box-shadow:
+    0 0 0 1px rgba(98, 91, 246, 0.18),
+    0 28px 60px rgba(71, 63, 197, 0.22);
+  transform: translateY(-6px);
+}
+
+.issue-card.selected::before {
+  height: 7px;
+  background: linear-gradient(90deg, var(--primary), #8d87ff);
+}
+
+.issue-card.selected::after {
+  z-index: 2;
+  top: 18px;
+  right: 18px;
+  bottom: auto;
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--primary);
+  box-shadow: 0 6px 15px rgba(98, 91, 246, 0.3);
+  content: '✓';
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.issue-card.selected h3 {
+  padding-right: 34px;
+  color: var(--primary-dark);
 }
 
 .issue-card h3 {

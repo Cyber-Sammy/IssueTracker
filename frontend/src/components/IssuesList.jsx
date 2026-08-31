@@ -1,14 +1,9 @@
 import IssueCard from "./IssueCard";
 import NoElements from "./NoElements";
-import type { IssueItem } from "../models/issue_item";
 
 import './styles/IssuesList.css'
 
-interface IssuesListProps {
-    issues: IssueItem[];
-}
-
-function ElementsList({ issues }: IssuesListProps) {
+function IssuesList({ issues, selectedIssueId, selectIssueCallback }) {
 
     if (issues.length === 0) {
         return <NoElements />;
@@ -17,10 +12,10 @@ function ElementsList({ issues }: IssuesListProps) {
     return (
         <div className="elements-list">
             {issues.map(issue => (
-                <IssueCard key={issue.id} issue={issue} />
+                <IssueCard key={issue.id} issue={issue} isSelected={issue.id === selectedIssueId} selectIssueCallback={selectIssueCallback} />
             ))}
         </div>
     )
 }
 
-export default ElementsList
+export default IssuesList
