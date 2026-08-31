@@ -5,7 +5,7 @@ function Button({ text, isEnabled, callback }) {
 
     return (
         <button
-            className={`delete-button ${buttonEnabled ? '' : 'delete-button--disabled'}`}
+            className={`button ${buttonEnabled ? '' : 'button--disabled'}`}
             onClick={callback}
             disabled={!buttonEnabled}>
             {text}

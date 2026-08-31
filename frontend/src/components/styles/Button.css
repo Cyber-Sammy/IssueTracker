@@ -1,4 +1,4 @@
-.delete-button {
+.button {
   position: relative;
   display: inline-flex;
   min-width: 170px;
@@ -21,14 +21,14 @@
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, filter 180ms ease;
 }
 
-.delete-button::before {
+.button::before {
   content: '×';
   font-size: 1.3rem;
   font-weight: 500;
   line-height: 1;
 }
 
-.delete-button::after {
+.button::after {
   position: absolute;
   top: -40%;
   left: -35%;
@@ -40,29 +40,29 @@
   transition: left 350ms ease;
 }
 
-.delete-button:hover {
+.button:hover {
   border-color: #c93252;
   box-shadow: 0 16px 32px rgba(216, 61, 93, 0.3);
   filter: saturate(1.08);
   transform: translateY(-2px);
 }
 
-.delete-button:hover::after {
+.button:hover::after {
   left: 115%;
 }
 
-.delete-button:active {
+.button:active {
   box-shadow: 0 7px 16px rgba(216, 61, 93, 0.24);
   transform: translateY(1px);
 }
 
-.delete-button:focus-visible {
+.button:focus-visible {
   outline: 4px solid rgba(235, 92, 120, 0.2);
   outline-offset: 3px;
 }
 
-.delete-button--disabled,
-.delete-button:disabled {
+.button--disabled,
+.button:disabled {
   border-color: #d7dce6;
   color: #949dac;
   background: linear-gradient(135deg, #f1f3f7, #e7eaf0);
@@ -72,20 +72,20 @@
   transform: none;
 }
 
-.delete-button--disabled::before,
-.delete-button:disabled::before {
+.button--disabled::before,
+.button:disabled::before {
   color: #aeb5c1;
 }
 
-.delete-button--disabled::after,
-.delete-button:disabled::after {
+.button--disabled::after,
+.button:disabled::after {
   display: none;
 }
 
-.delete-button--disabled:hover,
-.delete-button:disabled:hover,
-.delete-button--disabled:active,
-.delete-button:disabled:active {
+.button--disabled:hover,
+.button:disabled:hover,
+.button--disabled:active,
+.button:disabled:active {
   border-color: #d7dce6;
   box-shadow: none;
   filter: none;
@@ -93,7 +93,7 @@
 }
 
 @media (max-width: 600px) {
-  .delete-button {
+  .button {
     width: 100%;
   }
 }
